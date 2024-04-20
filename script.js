@@ -33,7 +33,7 @@
     //fetch data from weather API
     async function updateTemperature(){
         let location = input.value;
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=ae6aaba6a219490dbba52518241904&q=${location}&days=1&aqi=no&alerts=no`;
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=ae6aaba6a219490dbba52518241904&q=${location}&days=1&aqi=no&alerts=no`;
         const data = await fetchData(url);
     
         if (data && (tempUnit === 'C')){
