@@ -39,9 +39,30 @@
         if (data && (tempUnit === 'C')){
             temp.textContent = `${data.current.temp_c} °${tempUnit}`;
             feelsLike.textContent = `Feels like: ${data.current.feelslike_c} °${tempUnit}`;
+
+            //change background color based on weather
+            if (data.current.temp_c < 10){
+                document.body.style.backgroundColor = '#B3C4F8';
+            } else if (data.current.temp_c >= 10 && data.current.temp_c < 20){
+                document.body.style.backgroundColor = '#FDF2C7';
+            } else if (data.current.temp_c >= 20 && data.current.temp_c < 30){
+                document.body.style.backgroundColor = '#F5BF9F';
+            } else {
+                document.body.style.backgroundColor = '#E6836C';
+            }
         } else if (data && (tempUnit === 'F')){
             temp.textContent = `${data.current.temp_f} °${tempUnit}`;
             feelsLike.textContent = `Feels like: ${data.current.feelslike_f} °${tempUnit}`;
+
+            if (data.current.temp_f < 50){
+                document.body.style.backgroundColor = '#B3C4F8';
+            } else if (data.current.temp_f >= 50 && data.current.temp_f < 68){
+                document.body.style.backgroundColor = '#FDF2C7';
+            } else if (data.current.temp_f >= 68 && data.current.temp_f < 86){
+                document.body.style.backgroundColor = '#F5BF9F';
+            }  else {
+                document.body.style.backgroundColor = '#E6836C';
+            }
         }
         else {
             temp.textContent = 'Location not found';
