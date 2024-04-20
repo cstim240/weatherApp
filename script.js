@@ -8,17 +8,33 @@
 (function () {
     const button = document.getElementById('btn');
     const input = document.getElementById('location');
+    const tempBtn = document.getElementById('converter');
     let temp = document.querySelector('.temp'); //where temp will be displayed
+    let tempUnit = 'C';
+    let isCelcius = true;
 
+    //toggle between F and C
+    tempBtn.addEventListener('click', function(){
+        if (isCelcius){
+            tempUnit = 'F';
+            isCelcius = false;
+        } else {
+            tempUnit = 'C';
+            isCelcius = true;
+        }
+    });
 
     button.addEventListener('click', async function(){
         let location = input.value;
         const url = `http://api.weatherapi.com/v1/forecast.json?key=ae6aaba6a219490dbba52518241904&q=${location}&days=1&aqi=no&alerts=no`;
         const data = await fetchData(url);
     
-        if (data){
-            temp.textContent = `${data.current.temp_c} °C`;
-        } else {
+        if (data && (tempUnit === 'C')){
+            temp.textContent = `${data.current.temp_c} °${tempUnit}`;
+        } else if (data && (tempUnit === 'F')){
+            temp.textContent = `${data.current.temp_f} °${tempUnit}`;
+        }
+        else {
             temp.textContent = 'Location not found';
         }
     });
@@ -36,3 +52,7 @@ async function fetchData(url){
         console.error('Error:', error);
     }
 };
+
+async function convertTemp(url){
+    
+}
