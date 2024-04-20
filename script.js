@@ -11,6 +11,8 @@
     const tempBtn = document.getElementById('converter');
 
     let temp = document.querySelector('.temp'); //where temp will be displayed
+    let conditions = document.querySelector('.conditions'); //where weather conditions will be displayed
+    let conditionImage = document.querySelector('.conditionImage'); //where weather icon will be displayed
     let tempUnit = 'C';
     let isCelcius = true;
 
@@ -26,6 +28,7 @@
         await updateTemperature();
     });
 
+    //fetch data from weather API
     async function updateTemperature(){
         let location = input.value;
         const url = `http://api.weatherapi.com/v1/forecast.json?key=ae6aaba6a219490dbba52518241904&q=${location}&days=1&aqi=no&alerts=no`;
@@ -39,8 +42,12 @@
         else {
             temp.textContent = 'Location not found';
         }
+        conditions.textContent = data.current.condition.text;
+        conditionImage.src = 'https:' + data.current.condition.icon;
+
     }
 
+    //event listener for search button, also calls updateTemperature function
     button.addEventListener('click', updateTemperature);
 })();
 
