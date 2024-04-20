@@ -13,6 +13,8 @@
     let temp = document.querySelector('.temp'); //where temp will be displayed
     let conditions = document.querySelector('.conditions'); //where weather conditions will be displayed
     let conditionImage = document.querySelector('.conditionImage'); //where weather icon will be displayed
+    let feelsLike = document.querySelector('.feelsLike'); //where feels like temp will be displayed
+    let rainChance = document.querySelector('.rainChance'); //where rain chance will be displayed
     let tempUnit = 'C';
     let isCelcius = true;
 
@@ -36,13 +38,16 @@
     
         if (data && (tempUnit === 'C')){
             temp.textContent = `${data.current.temp_c} °${tempUnit}`;
+            feelsLike.textContent = `Feels like: ${data.current.feelslike_c} °${tempUnit}`;
         } else if (data && (tempUnit === 'F')){
             temp.textContent = `${data.current.temp_f} °${tempUnit}`;
+            feelsLike.textContent = `Feels like: ${data.current.feelslike_f} °${tempUnit}`;
         }
         else {
             temp.textContent = 'Location not found';
         }
         conditions.textContent = `${data.current.condition.text} in ${data.location.name}, ${data.location.country}`;
+        rainChance.textContent = `Chance of rain: ${data.current.precip_mm} mm`;
         conditionImage.src = `https:${data.current.condition.icon}`;
 
     }
