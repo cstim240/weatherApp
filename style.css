@@ -49,24 +49,57 @@ table {
 
 /* CSS code below*/
 
+/* Header styling */
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EFF1ED;
+    height: 100vh;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    color: #E0DEE3;
+    height: 90px;
+    width: 100%;
+    background-color: #373D20;
 }
 
 .headerIcon {
     width: 50px;
     height: 50px;
     display: block;
+    border: 5px dotted #E0DEE3;
+    padding: 5px;
+    border-radius: 35%;
 }
 
 h1 {
     font-size: 75px;
     font-weight: 800;
+}
+
+/* Display Styling */
+
+/* Input Styling */
+
+/* Footer */
+.footer {
+    background-color: #373D20;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ghIcon {
+    width: 30px;
+    height: 30px;
+    display: block;
 }
