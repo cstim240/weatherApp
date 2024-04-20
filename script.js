@@ -42,8 +42,8 @@
         else {
             temp.textContent = 'Location not found';
         }
-        conditions.textContent = data.current.condition.text;
-        conditionImage.src = 'https:' + data.current.condition.icon;
+        conditions.textContent = `${data.current.condition.text} in ${data.location.name}, ${data.location.country}`;
+        conditionImage.src = `https:${data.current.condition.icon}`;
 
     }
 
