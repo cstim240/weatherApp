@@ -85,6 +85,29 @@ h1 {
 }
 
 /* Display Styling */
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.display p {
+    font-size: 30px;
+    font-weight: 700;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7); /* Box shadow for 3D effect */
+}
+
+.conditionImage {
+    width: 20%;
+    height: auto;
+}
 
 /* Input Styling */
 
