@@ -44,7 +44,7 @@
             if (data.current.temp_c < 10){
                 document.body.style.backgroundColor = '#B3C4F8';
             } else if (data.current.temp_c >= 10 && data.current.temp_c < 20){
-                document.body.style.backgroundColor = '#FDF2C7';
+                document.body.style.backgroundColor = '#ADD8E6';
             } else if (data.current.temp_c >= 20 && data.current.temp_c < 30){
                 document.body.style.backgroundColor = '#F5BF9F';
             } else {
@@ -57,7 +57,7 @@
             if (data.current.temp_f < 50){
                 document.body.style.backgroundColor = '#B3C4F8';
             } else if (data.current.temp_f >= 50 && data.current.temp_f < 68){
-                document.body.style.backgroundColor = '#FDF2C7';
+                document.body.style.backgroundColor = '#ADD8E6';
             } else if (data.current.temp_f >= 68 && data.current.temp_f < 86){
                 document.body.style.backgroundColor = '#F5BF9F';
             }  else {
@@ -68,7 +68,7 @@
             temp.textContent = 'Location not found';
         }
         conditions.textContent = `${data.current.condition.text} in ${data.location.name}, ${data.location.country}`;
-        rainChance.textContent = `Chance of rain: ${data.current.precip_mm} mm`;
+        rainChance.textContent = `Precipitation: ${data.current.precip_mm} mm`;
         conditionImage.src = `https:${data.current.condition.icon}`;
 
     }
